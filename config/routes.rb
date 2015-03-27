@@ -26,7 +26,9 @@ Rails.application.routes.draw do
   #     end
   #   end
   resources :chatrooms
-  resources :messages
+  resources :messages do
+    collection { get :events }
+  end
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

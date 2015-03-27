@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
       end
     end
   rescue IOError
-    
+    logger.info 'Stream closed'
   ensure
     redis.quit
     response.stream.close

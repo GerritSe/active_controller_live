@@ -43,3 +43,13 @@ group :development, :test do
   gem 'spring'
 end
 
+# puma server for asynchronous connections
+gem 'puma'
+# live pushing to the client
+gem 'redis'
+# bootstrap for styling
+gem 'bootstrap-sass'
+# haml for HTML output
+gem 'haml'
+# pry for debugging
+gem 'pry-rails'

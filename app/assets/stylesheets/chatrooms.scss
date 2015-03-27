@@ -1,0 +1,24 @@
+// Place all the styles related to the chatrooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#chatroom {
+  .messages {
+    border: 1px solid #eee;
+    height: 500px;
+    margin-bottom: 10px;
+    overflow: scroll;
+    padding: 20px;
+  }
+
+  .form-control {
+    -webkit-transition: 0.1s linear all;
+    -moz-transition:0.1s linear all;
+    -o-transition:0.1s linear all;
+    transition:0.1s linear all;
+  }
+
+  .form-control.error {
+    background-color: #ebcccc;
+  }
+}

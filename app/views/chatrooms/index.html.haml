@@ -1,0 +1,13 @@
+= content_for :page_title, 'Chatrooms'
+= content_for :page_id, 'chatrooms'
+%div.col-md-4
+  %ul.list-group
+    - @chatroom_list.each do |chatroom|
+      - if chatroom == @chatroom
+        %li.list-group-item.active= chatroom.name
+      - else
+        %li.list-group-item
+          = link_to(chatroom.name, chatrooms_path(id: chatroom.id))
+%div.col-md-7.col-md-offset-1
+  - unless @chatroom.nil?
+    = render partial: 'chatroom_description'

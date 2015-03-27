@@ -1,0 +1,12 @@
+!!! 5
+%html
+  %head
+    %title= 'ChatApp - ' + yield(:page_title)
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body{id: yield(:page_id)}
+    %div.container
+      %h1= yield :page_title
+      %hr
+      = yield

@@ -1,0 +1,15 @@
+=content_for :page_title, @chatroom.name
+=content_for :page_id, 'chatroom'
+%div.col-md-12
+  %div.messages
+    - @chatroom.messages.each do |message|
+      %div= message.user + ': ' + message.message
+= form_for Message.new do |f|
+  = f.hidden_field :chatroom_id, value: @chatroom.id
+  %div.col-md-2
+    = f.text_field :user, :class => 'form-control', :placeholder => 'Name', 'aria-required' => 'true', :required => 'required', :autocomplete => 'off'
+  %div.col-md-10
+    %div.form-group
+      = f.text_field :message, :class => 'form-control', :placeholder => 'Name', 'aria-required' => 'true', :required => 'required', :autocomplete => 'off'
+    %div.form-group
+      = f.submit class: 'btn btn-info pull-right', value: 'Abschicken'

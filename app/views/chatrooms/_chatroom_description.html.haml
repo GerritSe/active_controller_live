@@ -1,0 +1,5 @@
+%h2= @chatroom.name
+%p= @chatroom.description
+%hr
+%a{href: chatroom_path(@chatroom)}
+  %button.btn.btn-info Beitreten
